@@ -1,0 +1,38 @@
+package project;
+
+import org.junit.AfterClass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class Activity2 {
+	
+	WebDriver driver ;
+	
+	@BeforeClass
+	public void setUp() {
+		driver = new FirefoxDriver();
+		driver.get("http://alchemy.hguy.co/orangehrm");
+		
+	}
+	
+	@Test
+	public void headerImage () {
+		
+		 WebElement headerImage = driver.findElement(By.xpath("//img[@src='/orangehrm/symfony/web/webres_5d69118beeec64.10301452/"
+					+ "themes/default/images/login/logo.png']"));
+			
+			String src = headerImage.getAttribute("src");
+			
+			System.out.println("Header image url is " + src);
+	}
+	
+	@AfterClass
+	public void tearDown() {
+		driver.close();
+	}
+	}
