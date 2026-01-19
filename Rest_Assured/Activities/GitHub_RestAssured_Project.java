@@ -23,7 +23,7 @@ public class GitHub_RestAssured_Project {
 
     // Declare response specification
     
-    String sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILnASTYH36ZhJFNtWu6Rop0M+6vTlHpaaT8maVusgxSf";
+    String sshKey = "ssh-ed25519 ";
     int sshKeyId ;
     
     	RequestSpecification requestSpec = new RequestSpecBuilder()
@@ -76,4 +76,5 @@ public class GitHub_RestAssured_Project {
 	  
   }
 }
+
 
