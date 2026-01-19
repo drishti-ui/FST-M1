@@ -29,7 +29,7 @@ public class GitHub_RestAssured_Project {
     	RequestSpecification requestSpec = new RequestSpecBuilder()
                 .setBaseUri("https://api.github.com")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("Authorization", "token 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")
+                .addHeader("Authorization", "token ")
                 .build();
     	
     	ResponseSpecification responseSpec = new ResponseSpecBuilder()
@@ -76,3 +76,4 @@ public class GitHub_RestAssured_Project {
 	  
   }
 }
+
