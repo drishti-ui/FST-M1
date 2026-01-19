@@ -1,0 +1,9 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org" xmlns:calc="http://tempuri.org">
+   <soap:Header/>
+   <soap:Body>
+      <calc:Add>
+         <calc:intA>10</calc:intA>
+         <calc:intB>20</calc:intB>
+      </calc:Add>
+   </soap:Body>
+</soap:Envelope>

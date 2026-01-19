@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <projectId>12345</projectId>
+    <name>Alpha Project</name>
+    <status>Active</status>
+    <startDate>2025-01-15</startDate>
+    <teamMembers>
+        <member>
+            <id>m1</id>
+            <name>John Doe</name>
+        </member>
+        <member>
+            <id>m2</id>
+            <name>Jane Smith</name>
+        </member>
+    </teamMembers>
+    <description>A sample project description.</description>
+</project>
