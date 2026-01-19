@@ -1,0 +1,36 @@
+package activities;
+
+import org.jspecify.annotations.Nullable;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class Activity3 {
+WebDriver driver;
+	
+	@BeforeClass
+	public void setUp() {
+		driver = new FirefoxDriver();
+		driver.get("https://training-support.net/webelements/login-form");
+	}
+	
+	@Test
+	public void testCase1() {
+		
+		driver.findElement(By.id("username")).sendKeys("admin");
+		driver.findElement(By.id("password")).sendKeys("password");
+		driver.findElement(By.xpath("//button[text() = 'Submit']")).click();
+		System.out.println("Page title is : " + driver.getTitle());
+		Assert.assertEquals(driver.getTitle(), "Selenium: Login Success!");
+	}
+	
+	@AfterClass
+	public void teardown() {
+		driver.close();
+	}
+
+}

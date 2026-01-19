@@ -1,0 +1,53 @@
+package activities;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class Activity2 {
+	
+	WebDriver driver;
+	
+	@BeforeClass
+	public void setUp() {
+		driver = new FirefoxDriver();
+		driver.get("https://training-support.net/webelements/target-practice/");
+	}
+	
+	@Test(priority = 1)
+	public void testcase1() {
+		System.out.println("Page title is : " + driver.getTitle());
+		Assert.assertEquals(driver.getTitle(), "Selenium: Target Practice");
+	}
+	
+	@Test(priority = 2)
+	public void testcase2() {
+		WebElement blackButton = driver.findElement(By.cssSelector("button.black"));
+        Assert.assertTrue(blackButton.isDisplayed());
+        Assert.assertEquals(blackButton.getText(), "black");
+	}
+	
+	@Test(enabled = false)
+    public void testcase3() {
+        // This test will be skipped and not counted
+        String subHeading = driver.findElement(By.className("sub")).getText();
+        Assert.assertTrue(subHeading.contains("Practice"));
+    }
+	
+	 @Test
+	    public void testcase4() {
+	        // This test will be skipped and will be be shown as skipped
+	        throw new SkipException("Skipping test case");
+	    }
+	
+	@AfterClass
+	public void teardown() {
+		driver.close();
+	}
+}
